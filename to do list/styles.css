@@ -1,0 +1,169 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+}
+
+.todo-app {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    color: #610c53;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#new-task {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#add-task {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.buttons button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 0 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#tasks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tasks li {
+    background: rgba(255, 255, 255, 0.4);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+}
+
+#tasks li.completed {
+    text-decoration: line-through;
+    background: rgba(100, 255, 100, 0.4);
+}
+
+#tasks li:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+#tasks li .edit-btn, #tasks li .delete-btn, #tasks li .complete-btn {
+    background: #ff6b6b;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: background 0.3s ease-in-out;
+    margin-left: 5px;
+}
+
+#tasks li .edit-btn {
+    background: #6b6bff;
+}
+
+#tasks li .complete-btn {
+    background: #6bff6b;
+}
+
+#tasks li .edit-btn:hover, #tasks li .delete-btn:hover, #tasks li .complete-btn:hover {
+    background: #ff4b4b;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.footer p {
+    color: #fff;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .input-container {
+        flex-direction: column;
+    }
+
+    #new-task {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
